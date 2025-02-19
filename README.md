@@ -34,22 +34,19 @@ Results are exported as reports and can be integrated into vulnerability managem
   - Retreive scan findings and configure automated reports sent by mail
   - Review DAST scan reports in GitLab
 
-This setup ensures automated security testing with OWASP ZAP in a Kubernetes environment, enhancing security visibility for your frontend application. 🚀🔍 </br>
+This setup ensures automated security testing with OWASP ZAP in a Kubernetes environment, enhancing security visibility for your frontend application. 🚀🔍 </br></br>
 
 
 
 
 ---
-
-![ZAP Kubernetes Integration](https://github.com/HamzaBms/ZAP_K8S_Integration/blob/main/WebAppScanning.png)
-
 ##### Zap Automated Scan Mechanism :
 
- 📥 <h6>Spider:</h6> It is used to automatically discover new resources/URLs on your website. It visits those URLs, identifies the hyperlinks and adds them to the list. </br>
+<h6>Spider:</h6> It is used to automatically discover new resources/URLs on your website. It visits those URLs, identifies the hyperlinks and adds them to the list. </br>
 
- 📥 <h6>Active Scan:</h6> It is used to find the potential vulnerabilities by using the known attacks against the selected targets. It gets its targets from the spider attack. </br></br>
-
-
+<h6>Active Scan:</h6> It is used to find the potential vulnerabilities by using the known attacks against the selected targets. It gets its targets from the spider attack. </br>
+![ZAP Kubernetes Integration](https://github.com/HamzaBms/ZAP_K8S_Integration/blob/main/WebAppScanning.png)
+</br></br>
 
 ---
 
