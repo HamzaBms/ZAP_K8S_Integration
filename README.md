@@ -38,7 +38,7 @@ This setup ensures automated security testing with OWASP ZAP in a Kubernetes env
 
 ---
 
-![ZAP Kubernetes Integration](ZAP_K8S_Integration/WebAppScanning.png)
+![ZAP Kubernetes Integration](https://github.com/HamzaBms/ZAP_K8S_Integration/blob/main/WebAppScanning.png)
 
 
 ---
