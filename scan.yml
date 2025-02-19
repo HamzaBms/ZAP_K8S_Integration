@@ -1,0 +1,29 @@
+apiVersion: "execution.securecodebox.io/v1"
+kind: Scan
+metadata:
+  name: "zap-full-scan-bodgeit"
+  labels:
+    organization: "OWASP"
+  namespace: "dry-run"                    #namespace where the scan will be executed
+spec:
+  scanType: "zap-full-scan"
+  parameters:
+    # target URL including the protocol
+    - -t
+    - "urltarget"
+    # include the alpha active and passive scan rules as well
+    - -a
+    - -r
+    - "report_html"
+    # show debug messages
+    - -d
+    # the number of minutes to spider for (default 1)
+    - -m
+    - "10"
+  resources:
+    requests:
+      cpu: "8"
+      memory: 12Gi
+    limits:
+      cpu: "8"
+      memory: 12Gi
