@@ -1,0 +1,4 @@
+target:
+  - "https://target1.com"
+  - "https://target2.com"
+  # - "https://target3.com"
