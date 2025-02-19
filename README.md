@@ -38,6 +38,11 @@ This setup ensures automated security testing with OWASP ZAP in a Kubernetes env
 
 ---
 
+!(/ZAP_K8S_Integration/images/WebAppScanning.jpg)
+
+
+---
+
 ## 🚀 Installation & Deployment  
 
 You can deploy OWASP ZAP in your **Kubernetes cluster** using either **Ansible** or manually.
