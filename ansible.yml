@@ -1,0 +1,35 @@
+---
+- name: Install ZAP using Ansible
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Add secureCodeBox Helm Repo
+      community.kubernetes.helm_repository:
+        name: secureCodeBox
+        repo_url: https://charts.securecodebox.io
+
+    - name: Create a new namespace for secureCodeBox Operator
+      community.kubernetes.k8s:
+        state: present
+        definition:
+          apiVersion: v1
+          kind: Namespace
+          metadata:
+            name: securecodebox-system
+
+    - name: Install the Operator & CRDs
+      community.kubernetes.helm:
+        name: securecodebox-operator
+        chart_ref: secureCodeBox/operator
+        namespace: securecodebox-system
+        state: present
+
+    - name: Configure storage class PVC
+            storageClassName: yourstorageclassname  #set your storage class name
+
+    - name: Install Zap
+      community.kubernetes.helm:
+        name: zap
+        chart_ref: secureCodeBox/zap
+        namespace: securecodebox-system
+        state: present
