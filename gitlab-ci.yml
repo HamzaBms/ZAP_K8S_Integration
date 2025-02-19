@@ -1,0 +1,41 @@
+include:
+  - template: Security/Secret-Detection.gitlab-ci.yml
+
+stages:
+  - test
+ 
+zap:
+  image: #your builded image with necessary dependency and configured user to access your cluster using RBAC
+  stage: test
+  variables:
+    K_CLUSTER_HOST: "api-server.exemple.com"  #set your cluster api server
+    USER_EMAIL: "user@email"  #user email to send the report you can put multiple email separated by , exemple : mail1@exemple,mail2@exemple
+    MAIL_Server: "$HostName"  #mail server to send the report
+    MS_KEY: "$HostKey"        #private key to access your mail server
+    user: "$user"             #user to access your mail server(where mailx or any cli mail tool is installed)
+  script:
+    - apt-get update
+    - wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
+    - chmod a+x /usr/local/bin/yq
+    - yq --version
+    - apt install -y zip
+    - apt-get install -y openssh-client
+    - echo "$HostKey" > ~/id_rsa
+    - chmod 600 ~/id_rsa
+    - eval $(ssh-agent -s)
+    - ssh-add ~/id_rsa
+    - echo "$name"
+    - chmod +x script.sh && ./script.sh
+    - zip -r Dynamic-Application-Security-Testing_reports.zip reports 
+    - pwd
+    - ls -lrtha
+    - echo ${user}@${MAIL_Server}
+    - scp -o StrictHostKeyChecking=no -i ~/id_rsa -r Dynamic-Application-Security-Testing_reports.zip ${user}@${MAIL_Server}:/home/admin/
+    - scp -o StrictHostKeyChecking=no -i ~/id_rsa -r emailtemplate.txt ${user}@${MAIL_Server}:/home/admin/
+    - ssh -o StrictHostKeyChecking=no -i ~/id_rsa ${user}@${MAIL_Server} "mailx -r "NoReplySecurityTeam@email" -s '[SECURITY] DAST SCAN FINDINGS REPORT' -A /home/admin/Dynamic-Application-Security-Testing_reports.zip user@email < emailtemplate.txt"
+    - ssh -o StrictHostKeyChecking=no -i ~/id_rsa ${user}@${MAIL_Server} "rm /home/admin/Dynamic-Application-Security-Testing_reports.zip"
+  artifacts:
+    paths:
+      - Dynamic-Application-Security-Testing_reports.zip
+
+
