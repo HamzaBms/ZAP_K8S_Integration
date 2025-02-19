@@ -4,11 +4,11 @@ This project integrates OWASP ZAP into a Kubernetes cluster to perform automated
 🚀 OWASP ZAP DAST Scanning in Kubernetes with GitLab CI/CD
 
 📌 Features
-✅ Deployment of OWASP ZAP in Kubernetes
-✅ Automated DAST scanning via GitLab CI/CD
-✅ Dynamic security analysis to detect vulnerabilities
-✅ Generation of vulnerability reports for the frontend application
-✅ Automated mails contains reports 
+  ✅ Deployment of OWASP ZAP in Kubernetes
+  ✅ Automated DAST scanning via GitLab CI/CD
+  ✅ Dynamic security analysis to detect vulnerabilities
+  ✅ Generation of vulnerability reports for the frontend application
+  ✅ Automated mails contains reports 
 
 🏗️ Architecture
 OWASP ZAP runs in a Kubernetes pod and scans the frontend application
