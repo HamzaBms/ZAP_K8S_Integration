@@ -1,0 +1,12 @@
+Subject: DAST Scan Reports
+
+Dear Team,
+
+Please find attached the DAST "full-active-scan" report(s). The scan covered the predefined endpoints setted in targets.yaml.
+
+Please review the report and take necessary actions to address any identified vulnerabilities. If you have any questions or need further assistance, feel free to reach out !
+
+Thank you,
+--
+Hamza BMS
+[DevSecOps-team]
