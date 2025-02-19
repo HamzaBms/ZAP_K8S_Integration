@@ -19,7 +19,7 @@ Results are exported as reports and can be integrated into vulnerability managem
 ⚙️ Deployment
   - OWASP ZAP is deployed as a Kubernetes Job via SecureCodeBox
   A GitLab CI/CD pipeline runs the scan after each code change
-  Scan results are stored in a CI/CD report
+  Scan results are sent automatically via mail.
 
 📜 Files in This Repository
   - .gitlab-ci.yml → GitLab CI/CD pipeline configuration
