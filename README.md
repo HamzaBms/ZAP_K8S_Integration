@@ -52,21 +52,20 @@ helm repo add secureCodeBox https://charts.securecodebox.io
 
 ```sh
 kubectl create namespace securecodebox-system
-3️⃣ Install the SecureCodeBox Operator & CRDs
+```
 
+3️⃣ Install the SecureCodeBox Operator & CRDs
 ```sh
 helm --namespace securecodebox-system upgrade --install securecodebox-operator secureCodeBox/operator
 ```
 
 4️⃣ Configure Storage Class for Persistent Volume Claims (PVC)
 Modify your configuration to set the appropriate StorageClass:
-
 ```sh
 storageClassName: yourstorageclass
 ```
 
 5️⃣ Install OWASP ZAP
-
 ```sh
 helm upgrade --install zap secureCodeBox/zap -n securecodebox-system
 ```
