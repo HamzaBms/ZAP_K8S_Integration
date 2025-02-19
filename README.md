@@ -1,4 +1,4 @@
-# ZAP_K8S_Integration
+![image](https://github.com/user-attachments/assets/279c6a35-c90b-4667-9bea-cf3e0831a2a6)# ZAP_K8S_Integration
 This project integrates OWASP ZAP into a Kubernetes cluster to perform automated Dynamic Application Security Testing (DAST) on a frontend application. The automation is managed through GitLab CI/CD, using SecureCodeBox chart as the scanning orchestrator.
 
 🚀 OWASP ZAP DAST Scanning in Kubernetes with GitLab CI/CD
@@ -36,9 +36,19 @@ Results are exported as reports and can be integrated into vulnerability managem
 
 This setup ensures automated security testing with OWASP ZAP in a Kubernetes environment, enhancing security visibility for your frontend application. 🚀🔍 </br>
 
+
+
+
 ---
 
 ![ZAP Kubernetes Integration](https://github.com/HamzaBms/ZAP_K8S_Integration/blob/main/WebAppScanning.png)
+
+##### Zap Automated Scan Mechanism :
+
+ 📥 <h6>Spider:</h6> It is used to automatically discover new resources/URLs on your website. It visits those URLs, identifies the hyperlinks and adds them to the list. </br>
+
+ 📥 <h6>Active Scan:</h6> It is used to find the potential vulnerabilities by using the known attacks against the selected targets. It gets its targets from the spider attack. </br></br>
+
 
 
 ---
