@@ -48,26 +48,23 @@ You can deploy OWASP ZAP in your **Kubernetes cluster** using either **Ansible**
 ```sh
 helm repo add secureCodeBox https://charts.securecodebox.io
 2️⃣ Create a Namespace for SecureCodeBox
+
 ```sh
-Copier
-Modifier
 kubectl create namespace securecodebox-system
 3️⃣ Install the SecureCodeBox Operator & CRDs
+
 ```sh
-Copier
-Modifier
 helm --namespace securecodebox-system upgrade --install securecodebox-operator secureCodeBox/operator
+
 4️⃣ Configure Storage Class for Persistent Volume Claims (PVC)
 Modify your configuration to set the appropriate StorageClass:
 
-yaml
-Copier
-Modifier
-storageClassName: yourstorageclass
-5️⃣ Install OWASP ZAP
 ```sh
-Copier
-Modifier
+storageClassName: yourstorageclass
+
+5️⃣ Install OWASP ZAP
+
+```sh
 helm upgrade --install zap secureCodeBox/zap -n securecodebox-system
 🔄 Automating Deployment with Ansible
 For automated installation, an Ansible playbook "ansible.yml" can be used to deploy OWASP ZAPin your Kubernetes cluster.
