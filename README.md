@@ -44,11 +44,11 @@ This setup ensures automated security testing with OWASP ZAP in a Kubernetes env
 
 <h4>Spider:</h4> It is used to automatically discover new resources/URLs on your website. It visits those URLs, identifies the hyperlinks and adds them to the list. </br>
 
-<h4>Active Scan:</h4> It is used to find the potential vulnerabilities by using the known attacks against the selected targets. It gets its targets from the spider attack. </br>
+<h4>Active Scan:</h4> It is used to find the potential vulnerabilities by using the known attacks against the selected targets. It gets its targets from the spider attack. </br></br>
 
 ![ZAP Kubernetes Integration](https://github.com/HamzaBms/ZAP_K8S_Integration/blob/main/WebAppScanning.png)
 
-</br></br>
+</br>
 ---
 </br></br></br>
 ## 🚀 Installation & Deployment  
